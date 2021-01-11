@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>svgMap demos</title>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+  <link href="demo.css" rel="stylesheet">
+  <link href="../svgMap-master/dist/svgMap.css" rel="stylesheet">
+  <script src="../svgMap-master/dist/svgMap.js"></script>
+</head>
+
+<body>
+
+  <div class="demo-wrapper">
+    <input type="file" id="selectFiles" value="Import" /><br />
+    <!-- <button id="import">Import</button> -->
+    <!-- <textarea id="result"></textarea> -->
+    <script src="country2code.js"></script>
+
+
+    <!-- Demo NC -->
+    <div class="demo-container">
+      <h2>NativeCamp. World Map😆</h2>
+
+      <div id="svgMapDataNC"></div>
+      <script>
+        new svgMap({
+          targetElementID: 'svgMapDataNC',
+          data: {
+            data: {
+              person: {
+                name: 'レッスン数',
+                format: '{0} 回',
+              },
+              male: {
+                name: '先生の人数',
+                format: '{0} 人',
+              },
+              female: {
+                name: 'Frau',
+                format: '{0} cm',
+                floatingNumbers: 1
+              }
+            },
+            applyData: 'person',
+            values: {}
+          },
+          flagType: 'emoji',
+          colorMin: '#99FF66',
+          colorMax: '#009966',
+          thresholdMin: 1,
+          noDataText: 'どんな先生に会えるかな😌'
+        });
+      </script>
+
+      <script src="parse.js"></script>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
